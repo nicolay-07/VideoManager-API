@@ -1,0 +1,57 @@
+# VideoManager API
+
+Uma API RESTful desenvolvida em **Node.js** e **Fastify** para a gestão de vídeos, utilizando **PostgreSQL (Neon)** como base de dados na nuvem[cite: 20].
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- **Node.js** (Ambiente de execução JavaScript)
+- **Fastify** (Framework web rápido e de baixo overhead)[cite: 19]
+- **PostgreSQL / Neon** (Base de dados relacional)[cite: 20]
+- **Postgres.js** (Cliente SQL para Node.js)[cite: 20]
+- **Dotenv** (Gestão de variáveis de ambiente)[cite: 20]
+
+---
+
+## 📋 Rotas da API
+
+- **`POST /videos`**: Cria um novo vídeo[cite: 19].
+- **`GET /videos`**: Lista todos os vídeos (suporta pesquisa por título via Query Parameter `?search=...`)[cite: 19].
+- **`PUT /videos/:id`**: Atualiza as informações de um vídeo existente com base no ID[cite: 19].
+- **`DELETE /videos/:id`**: Remove um vídeo com base no ID[cite: 19].
+
+---
+
+## ⚙️ Como Executar o Projeto
+
+### Pré-requisitos
+- Ter o [Node.js](https://nodejs.org/) instalado no seu computador.
+- Uma conta e uma base de dados criada no [Neon](https://neon.tech/).
+
+###  Clonar o repositório e instalar dependências
+Abra o terminal na pasta do projeto e execute:
+```bash
+npm install
+
+Criar a Tabela na Base de Dados
+
+No painel do Neon (no SQL Editor), execute o seguinte comando SQL para criar a tabela necessária:
+PNG
+SQL
+
+CREATE TABLE videos (
+    id TEXT PRIMARY KEY,
+    title TEXT,
+    description TEXT,
+    duration INTEGER
+);
+
+Iniciar o Servidor
+
+Execute o comando para iniciar a aplicação:
+Bash
+
+npm run dev
+
+O servidor estará a correr na porta 3334 (http://localhost:3334)[cite: 19].
